@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jason Zhang</title>
+        <title>Jason Zhang's Personal Website</title>
         <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <script src="https://kit.fontawesome.com/8991f4db94.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="bio">Bio</a>
-            <a href="music">Music</a>
-            <a href="projects">Projects</a>
-        </nav>
-        <div class="container">
-            <div style="float:left">
-                <h1 style="align-self:center">Jason Zhang</h1> 
-            </div>
-            <div style="float:center">
-                <div style="float:right">
-                    <img src="static/jason_profile.JPG" width="300px" height="auto" alt="profile picture"/>
+        <div class="container-fluid">
+            <!-- Navigation tab bar -->
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home" class="pull-left">Jason Zhang</a>
                 </div>
-                <div style="float:left">
-                    <ul style="list-style-type:none;">
-                        <li><a href="https://www.linkedin.com/in/jason-zhang-2755ba1b9/">LinkedIn</a></li>
-                        <li><a href="https://github.com/zhangjt1">GitHub</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCsfHDT-QNeR8AM-p_pe73sQ">Youtube</a></li>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right" id="nav">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Background</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                </div>
+
+            <!-- For testing purposes -->
+        
+            <div id="home" class="section">
+                <div class="box">
+                    <img src="static/jason_profile.jpg" alt="" class="box-img">
+                    <h1>Jason Zhang</h1>
+                    <h5> Programmer - Composer - Pianist </h5>
+                    <p> Student at the University of Michigan studying Composition BM and Computer Science BSE. 
+                        Interested in the intersections of music and technology. </p>
+                    <ul>
+                    <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
+            
+            <div id="about" class="section"><h1>About</h1></div>
+            <div id="education" class="section"><h1>Background</h1></div>
+            <div id="work" class="section"><h1>Work</h1></div>
+            <div id="projects" class="section"><h1>Projects</h1></div>
+            <div id="contact" class="section"><h1>Contact</h1></div>
         </div>
+
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+        <script src="static/script.js"></script>
     </body>
 </html>

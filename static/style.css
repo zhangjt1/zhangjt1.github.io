@@ -1,7 +1,152 @@
-body {
-    background-color: lightblue;
-  }
-h1 {
-    font-family: verdana;
-    font-size: 20px;
-  }
+body{
+  margin: 0;
+  padding: 0;
+  background: url(plant_background.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.box-img{
+  width: 300px;
+  border: 2px solid whitesmoke;
+}
+.box{
+  width: 450px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic', sans-serif;
+}
+.box h1{
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+.box h5{
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+.box p{
+  text-align: justify;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+.box li{
+  display: inline-block;
+  margin: 6px;
+  list-style: none;
+}
+.box li a{
+  color: white;
+  text-decoration: none;
+  font-size: 60px;
+  transition: all ease-in-out 250ms;
+}
+.box li a:hover{
+  color: #b9b9b9;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+/* navbar properties */
+.navbar {
+  background-color: rgba(0,0,0,0.5) !important;
+  border: 0 !important;
+  padding-top: 10px;
+  visibility: visible;
+}
+
+/* navbar invisible */
+.navbar-hide {
+  visibility: hidden;
+}
+
+/* navbar nav space from right */
+.navbar-nav {
+  margin-right: 5vw;
+}
+
+/* navbar nav individual spacing */
+.navbar-nav > li {
+  margin-left: 1vw;
+}
+
+/* navbar active background properties */
+.nav .active a {
+  background: none !important;
+  border-bottom: 5px solid #89C4F4;
+}
+
+/* navbar active text color */
+.navbar-nav > .active> a, .navbar-nav> li >a:hover, .navbar-nav>.active>a:focus {
+  color: #89C4F4 !important;
+  border-bottom: 5px solid #89C4F4;
+}
+
+/* section properties for testing purposes */
+.section {
+  min-height: 105vh;
+  padding: 60px;
+}
+
+.section > h1 {
+  color: white
+}
+
+/* navbar text properties */
+.navbar .nav > li > a {
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+/* toggle triple-bar color */
+.icon-bar {
+  color: white;
+}
+
+/* remove the border around toggle button */
+.navbar-toggle {
+  border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white !important;
+}
+
+/* navbar brand properties */
+.navbar .navbar-brand {
+  color: white;
+  font-size: 25px;
+  padding-left: 30px;
+  font-weight: 100;
+}
+
+/* navbar brand hover properties */
+.navbar-brand:hover {
+  color: #89C4F4 !important;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    /* navbar active background properties */
+    .nav .active a {
+      border-bottom: none;
+    }
+
+    /* navbar active text color */
+    .navbar-nav > .active> a, .navbar-nav> li >a:hover, .navbar-nav>.active>a:focus {
+      border-bottom: none;
+    }
+}
+
