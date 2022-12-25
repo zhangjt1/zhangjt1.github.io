@@ -10,7 +10,7 @@ body{
   border: 2px solid whitesmoke;
 }
 .box{
-  width: 450px;
+  width: 500px;
   background: rgba(0, 0, 0, 0.4);
   padding: 40px;
   text-align: center;
@@ -28,6 +28,9 @@ body{
   font-size: 20px;
   letter-spacing: 3px;
   font-weight: 100;
+}
+.box h6{
+  font-size: 15px;
 }
 .box p{
   text-align: justify;
@@ -92,8 +95,23 @@ ul{
 
 /* section properties for testing purposes */
 .section {
-  min-height: 105vh;
+  min-height: 80vh;
   padding: 60px;
+}
+
+.box2 {
+  background: rgba(133, 205, 223, 0.4);
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;
+}
+
+.box3 {
+  background: rgb(204, 204, 204);
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
 }
 
 .section > h1 {
@@ -150,3 +168,7 @@ ul{
     }
 }
 
+.container-fluid p {
+  color: white;
+  font-size: 15px;
+}
