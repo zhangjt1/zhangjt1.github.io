@@ -97,13 +97,13 @@ ul{
 /* navbar active background properties */
 .nav .active a {
   background: none !important;
-  border-bottom: 5px solid #89C4F4;
+  border-bottom: 5px solid #119822;
 }
 
 /* navbar active text color */
 .navbar-nav > .active> a, .navbar-nav> li >a:hover, .navbar-nav>.active>a:focus {
-  color: #89C4F4 !important;
-  border-bottom: 5px solid #89C4F4;
+  color: #119822 !important;
+  border-bottom: 5px solid #119822;
 }
 
 /* section properties for testing purposes */
@@ -112,6 +112,7 @@ ul{
   padding: 60px;
 }
 
+/* https://coolors.co/152614-1e441e-2a7221-119822-31cb00 */
 .box2 {
   background: rgba(30, 68, 30, 0.8);
   margin: auto;
@@ -162,7 +163,7 @@ ul{
 
 /* navbar brand hover properties */
 .navbar-brand:hover {
-  color: #89C4F4 !important;
+  color: #119822 !important;
 }
 
 @media only screen and (max-width: 768px) {
