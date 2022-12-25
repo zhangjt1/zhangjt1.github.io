@@ -5,10 +5,23 @@ body{
   background-size: cover;
   background-attachment: fixed;
 }
-.box-img{
-  width: 300px;
-  border: 2px solid whitesmoke;
+
+@keyframes ani-img {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+
 }
+.box-img{
+  width: 80%;
+  border: 2px solid whitesmoke;
+  animation-name: ani-img;
+  animation-duration: 2s;
+}
+
 .box{
   width: 500px;
   background: rgba(0, 0, 0, 0.4);
@@ -100,14 +113,14 @@ ul{
 }
 
 .box2 {
-  background: rgba(133, 205, 223, 0.4);
+  background: rgba(30, 68, 30, 0.8);
   margin: auto;
   margin-top: 5%;
   width: 80%;
 }
 
 .box3 {
-  background: rgb(204, 204, 204);
+  background: rgb(42, 114, 33, 0.8);
   margin: auto;
   padding: 20px;
   border-radius: 15px;
