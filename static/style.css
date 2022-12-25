@@ -108,8 +108,9 @@ ul{
 
 /* section properties for testing purposes */
 .section {
-  min-height: 80vh;
+  min-height: 40vh;
   padding: 60px;
+  color: white;
 }
 
 /* https://coolors.co/152614-1e441e-2a7221-119822-31cb00 */
