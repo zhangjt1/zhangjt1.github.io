@@ -188,3 +188,7 @@ ul{
   color: white;
   font-size: 15px;
 }
+
+.panel-body {
+  background: #152614;
+}
