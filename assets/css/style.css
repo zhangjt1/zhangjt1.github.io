@@ -54,13 +54,6 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-img {
-  float: left;
-  width:  400px;
-  height: 300px;
-  object-fit: cover;
-}
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -166,7 +159,8 @@ img {
 }
 
 #header.header-top .social-links,
-#header.header-top h2 {
+#header.header-top h2,
+#header.header-top .profile-pic {
   display: none;
 }
 
