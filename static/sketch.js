@@ -15,7 +15,7 @@ function setup() {
 
    let link = createA('index.html', 'Come back soon!');
    link.position(width/2, height/2)
-   
+
   
 }
 
@@ -26,16 +26,16 @@ function draw() {
   for (let i = 0; i <= width; i += 15) {
     for (let j = 0; j <= height; j += 15) {
       // TODO: Calculate the distance between mouse position and each ellipse's position
-      let size = dist(mouseX, mouseY, i, j);
+      let size = dist(mouseX, mouseY, i, j) * 5;
 
       // TODO: Reassign size to be proportional to the size of the canvas
       size = (size / canvas_dist) * 70
 
       fill(0);
       // Try uncommenting the second fill function below:
-      fill(j, i, size, 10 );
+      fill(j, i, size, 10);
       // TODO: set width and height of ellipse to size variable
-      ellipse(i, j, size, size);
+      ellipse(i, j, size/2, size/2);
     }
   }
   
