@@ -160,8 +160,17 @@ h6 {
 
 #header.header-top .social-links,
 #header.header-top h2,
-#header.header-top .profile-pic {
+#header.header-top .profile-pic,
+#header.header-top .plant{
   display: none;
+}
+
+.profile-pic img {
+  transition: transform .7s ease-in-out;
+}
+
+.profile-pic img:hover {
+  transform: rotate(10deg);
 }
 
 #header.header-top h1 {
