@@ -1,280 +1,664 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Jason Zhang's Personal Website</title>
-        <link rel="stylesheet" type="text/css" href="/static/style.css" />
-        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-        <script src="https://kit.fontawesome.com/8991f4db94.js" crossorigin="anonymous"></script>
-    </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="50">
-        <div class="container-fluid">
-            <!-- Navigation tab bar -->
-            <div class="navbar navbar-default navbar-fixed-top">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#home" class="pull-left">Jason Zhang</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right" id="nav">
-                        <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#music">Music</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-                </div>
+<html lang="en">
 
-            <!-- For testing purposes -->
-            <div id="home" class="section">
-                <div class="box">
-                    <img src="static/profile.jpg" alt="" class="box-img">
-                    <h1>Jason Zhang</h1>
-                    <h5>Programmer - Composer - Pianist</h5>
-                    <hr>
-                    <ul>
-                    <li><a href="https://www.facebook.com/profile.php?id=100049671752607"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/jason-zhang-2755ba1b9/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.youtube.com/@jasonzhang7944"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
-                    <li><a href="https://github.com/zhangjt1"><i class="fa-brands fa-github"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div id="about" class="section box2">
-                <h1>About</h1>
-                <div class="containe-fluid">
-                    <div class="row align-items-start">
-                        <div class="col-sm-6">
-                            <p> Hi! I'm Jason Zhang. I'm currently a student at the University of Michigan studying Composition and Computer Science. 
-                                I'm interested in the intersections of music and technology, using Web3 and Machine Learning to bring
-                                more people closer to music. <br>
-                                As a composer I try to connect with people through my music. I draw inspiration from
-                                nature, the mudane experiences of life, as well as the harmonic language of video games
-                                and jazz. I also play keyboard in the <a href="https://www.youtube.com/@umsymphonyband">Symphony Band</a>. <br>
-                                In my free time I like to read, play with my dogs, and hike. One book that I read recently
-                                and have to recommend is the "Plant Messiah" by Carlos Magadelena.
-                             </p>
-                             <hr>
-                             <h3>Skills</h3>
-                             <h4>Languages</h4>
-                             <p>C++, Python, React.js, Java, MATLAB</p>
-                             <h4>Frameworks</h4>
-                             <p>Flask, NumPy</p>
-                             <h4>Databases</h4>
-                             <p>Postgres, sqLite</p>
-                             <h4>Other</h4>
-                             <p>Git, Linux, AWS</p>
-                        </div>
-                        <div class="col-sm-6 box3">
-                            <h1>Education</h1>
-                            <h6>University of Michigan | Computer Science BSE, Composition BM</h6>
-                            <hr>
-                            <p> GPA - 4.0 / 4.0</p>
-                            <p> Relevant Courses - (W23) Intro to Machine Learning, W(23) Computer Organization, Web Systems, Probability and Statistics, Algorithms and Data Structures,  Linear Algebra, Discrete Math,  Calculus</p>
-                            <p> Awards - Angell Scholar, 
-                              Hewlett-Packard Enterprises Employer Challenge 1st Place Winner,
-                              William J. Branstrom Freshman Award
-                            </p>
-                            <p> Music Teachers National Associations Senior Composition Competition National Winner (2020), 
-                              Michigan Music Educators Associations Honors Composition (2020),
-                              US Army Band “Pershing's Own Chamber” Music Composition Competition Semi-Finalist (2022),
-                              Bolcom and Morris Scholarship Recipient (2020)
-                            </p>
-                        </div>  
-                    </div>
-                </div>        
-                      
-            </div>
-            <div id="music" class="section box2">
-                <h1>Music</h1>
-                <h4>Composition</h4>
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                  </ol>
-                
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <iframe class="center-block" width="70%" height="400px" src="https://www.youtube.com/embed/xakSRqa9c7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>Oh My Gourd!</h3>
-                        <p>For Oboe and Bassoon.</p>
-                      </div>
-                    </div>
-                
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" margin="auto" src="https://www.youtube.com/embed/o7OLmRJPxtI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>Suspicious Certainty Movement 2</h3>
-                        <p>For Saxophone Quartet</p>
-                      </div>
-                    </div>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" margin="auto" src="https://www.youtube.com/embed/Rdt7o0FfY8w?si=tchAmO-ZYEOlWGwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>Between You and the Surface</h3>
-                        <p>For Hub New Music</p>
-                      </div>
-                    </div>
-                
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" src="https://beta.scorefol.io/e/ZKepXDo9P0dDWfsT7h5a" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+  <title>Jason Zhang's Website</title>
+  <meta content="" name="description">
+  <meta content="composer, programmer, researcher, technologist, creative programmer" name="keywords">
 
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" src="https://beta.scorefol.io/e/jkR4VQqXrpZq3AnyCj9f" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                
-                  <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-                <hr>
-                <h4>Piano</h4>
-                <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="false">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                  </ol>
-                
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <iframe class="center-block" width="70%" height="400px" src="https://www.youtube.com/embed/suToGDRgY18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>Danzon No. 2</h3>
-                        <p>By Arturo Marquez</p>
-                      </div>
-                    </div>
-                
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" margin="auto" src="https://www.youtube.com/embed/w9qSXlq-ydI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>The Seer</h3>
-                        <p>By Erik Santos</p>
-                      </div>
-                    </div>
-                
-                    <div class="item">
-                      <iframe class="center-block" width="70%" height="400px" margin="auto" src="https://www.youtube.com/embed/l96mWRDj1q0?si=JhmRJ0chLjjeZyi8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      <div class="carousel-caption">
-                        <h3>Arcana</h3>
-                        <p>By Rudolf Escher</p>
-                      </div>
-                    </div>
+  <!-- Favicons -->
+  <link href="images/favicon.png" rel="icon">
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <h1><a href="index.html">Jason Zhang</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       
-                  </div>
-                
-                  <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel2" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-                <hr>
+      <h2>I'm a passionate <span id="typed"> </span> from Michigan</h2>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="#header">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#resume">Resume</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/jason-zhang-cs/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/zhangjt1" class="github"><i class="bi bi-github"></i></a>
+        <a href="https://www.youtube.com/channel/UCsfHDT-QNeR8AM-p_pe73sQ" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
+
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Learn more about me</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="images/profile.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Composer - Pianist - Programmer</h3>
+          <p class="fst-italic">
+            Freelance composer &amp; incoming software engineering intern @ Autodesk
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://zhangjt1.github.io/</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>University of Michigan</span></li>
+              </ul>
             </div>
-            <div id="projects" class="section box2">
-                <h1>Projects</h1>
-                <div class="container-fluid">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                              Counterpoint Checker</a>
-                            </h4>
-                          </div>
-                          <div id="collapse1" class="panel-collapse collapse">
-                            <div class="panel-body"><a href="https://counterpoint-checker.github.io/">Counterpoint Checker</a>
-                              is a web app that aims to make music theory more accessible to all through
-                              automatically grading counterpoint, a harmonic and melodic excercise that is
-                              used universally to teach Western music theory. It was built using a Python Flask
-                              RESTful API for the backend, and React.js for the frontend.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                              Local Band Scheduler</a>
-                            </h4>
-                          </div>
-                          <div id="collapse2" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              <p>
-                                An app aimed to help local bands schedule concerts easier, and to help
-                                students find upcoming concerts easier.
-                                Currently being developed using Sprint and Python.
-                              </p>
-                          </div>
-                          </div>
-                        </div>
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                              Grant Finder</a>
-                            </h4>
-                          </div>
-                          <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                              Web scraper that I built to help Connecticut Summerfest, a non-profit
-                              that I am interning for find grants that relate to them.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                              Personal Website</a>
-                            </h4>
-                          </div>
-                          <div id="collapse4" class="panel-collapse collapse">
-                            <div class="panel-body">This website was built
-                              using Javascript and Bootstrap.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>zhangjt[at]umich[dot]edu</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BM in Composition <br> BSE in Computer Science </span></li>
+              </ul>
             </div>
-            <div id="contact" class="section box2">
-                <h1>Contact</h1>
-                <h4>zhangjt@umich.edu</h4>
+          </div>
+          <p>
+            I'm a senior at the University of Michigan studying Composition and Computer Science. I have studied composition with
+            Bright Sheng, Micheal Daugherty, Roshanne Etezady and Evan Chambers. I have studied piano with Matthew Bengtson and chamber music
+            with Matt Albert. <br>
+            On the computer science side, I'm interested in machine learning, particulary various transformer architectures and their potential applications to 
+            generative music. I'm also dipping my toes into signal processing.<br>
+            On the music side, I'm currently working on incorporating more improvisation and electronics like live-processing (Max, Hydra, Javascript p5) into
+            my music as well as becoming more familiar with synthesising sound and producing. I write mostly classical concert music, though I am branching out,
+            and eager to do more. 
+          </p>
+        </div>
+      </div>
+
+    </div><!-- End About Me -->
+
+    <!-- ======= Skills  ======= -->
+    <div class="skills container">
+
+      <div class="section-title">
+        <h2>Coding Languages</h2>
+      </div>
+
+      <div class="row skills-content">
+        <div class="col-lg-6">
+          <div class="progress">
+            <span class="skill">Python <i class="val">85%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
+          </div>
+          <div class="progress">
+            <span class="skill">C++ <i class="val">75%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">C <i class="val">70%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">SQL <i class="val">65%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+            <div class="progress">
+              <span class="skill">Java<i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="progress">
+            <span class="skill">JavaScript <i class="val">60%</i></span>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <p>Hi</p>
+
+        </div>
+      </div>
+
+    </div><!-- End Skills -->
+
+    <!-- ======= Interests ======= -->
+    <div class="interests container">
+
+      <div class="section-title">
+        <h2>Other Interests</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+            <i class="ri-store-line" style="color: #ffbb2c;"></i>
+            <h3>Hiking</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+            <h3>Gardening</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+            <h3>Journalism</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+            <h3>Crosswords</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-database-2-line" style="color: #47aeff;"></i>
+            <h3>Traditional Chinese Flutes</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+            <h3>Guitar</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+            <h3>Violin</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+            <h3>Dogs</h3>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End Interests -->
+
+  </section><!-- End About Section -->
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Check My Resume</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">Education</h3>
+          <p>GPA: 3.99</p>
+          <div class="resume-item">
+            <h4>Bachelor's of Music in Composition</h4>
+            <h5>2020 - </h5>
+            <p><em>University of Michigan, Ann Arbor, MI</em></p>
+            <p><em>Teachers &amp; Mentors</em></p>
+            <p>
+            <ul>
+              <li>Bright Sheng</li>
+              <li>Michael Daugherty</li>
+              <li>Evan Chambers</li>
+              <li>Roshanne Etezady</li>
+              <li>Matthew Bengtson</li>
+              <li>Matt Albert</li>
+              <li>Michael Haithcock</li>
+              <li>Jason Fettig</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h4>Bachelor's of Science in Engineering in Computer Science</h4>
+            <h5>2020 - </h5>
+            <p><em>University of Michigan, Ann Arbor, MI</em></p>
+            <p><em>Relevant Coursework</em></p>
+            <p>
+            <ul>
+              <li>Large Language Models</li>
+              <li>Computer Vision</li>
+              <li>Machine Learning</li>
+              <li>Web Development</li>
+              <li>Computer Organization</li>
+              <li>Data Structures and Algorithms</li>
+              <li>Linear Algebra</li>
+              <li>Calculus I-III</li>
+              <li>Probability and Statistics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="resume-title">Professional Experience</h3>
+          <div class="resume-item">
+            <h4>University of Michigan</h4>
+            <h5>2023- Present</h5>
+            <p><em>Instructors Aide for Introduction to Machine Learning</em></p>
+            <p>
+            <ul>
+              <li>Created rubrics, homework, exams, and projects, and provided feedback and comments for over 320 students</li>
+              <li>Led discussion section, presented slides that clarified content from lecture, and solved example problems</li>
+              <li>Debugged student's Python code, offered advice and insights and encouraged collaboration during office hours</li>
+            </ul>
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Autodesk</h4>
+            <h5>2023 - Present</h5>
+            <p><em>Software Engineering Intern</em></p>
+            <p>
+            <ul>
+              <li>Determined how to add profile pictures and device data to API response by documenting a solution and providing architecture diagrams, 
+                identifying necessary credentials, organizing customer needs, and planning API contract and infrastructure changes, 
+                serving over 10 teams within Autodesk</li>
+              <li>Implemented solution in Python, integrating it as an AWS Lambda function and changing AWS CloudFormation templates, 
+                applying parallel computing to keep latency under 29 seconds while improving functionality </li>
+            </ul>
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Caterpillar</h4>
+            <h5>2022 - 2022</h5>
+            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+            <p>
+            <ul>
+              <li>Updated and maintained RESTful APIs using Java SpringBoot, Docker, and PostgreSQL and deployed onto AWS, fixing 2 bugs and adding a new endpoint feature</li>
+              <li>Wrote black-box unit, integration, and smoke tests in JUnit, discovering 2 critical design errors within an API</li>
+              <li>Teamed up with cybersecurity to write firewall policies on 8 public-facing AWS load balancers, protecting APIs from SQL injection and cross-site scripting attacks</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Resume Section -->
+
+  <!-- ======= Projects Section ======= -->
+  <section id="projects" class="projects">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Projects / Recordings</h2>
+        <p>My Projects</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4><a href="https://counterpoint-checker.github.io/">Counterpoint Checker</a></h4>
+            <p>Currently deprecated, a website that aimed to automatically grade counterpoint, an 18th
+              century practice that is still used to teach harmony to music students today.
+            </p>
+          </div>
         </div>
 
-        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-        <script src="static/script.js"></script>
-    </body>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4><a href="https://www.sfsymphony.org/Buy-Tickets/2023-24/SoundBox-CAROL-REILEY">Press Play: Carol Reiley and the Robots</a></h4>
+            <p>Aided Carol Reiley in producing and curating a concert that combined classical music with AI and robots. Created a 
+              video that utilized ControlNet and AnimateDiff to apply AI filters to videos of people.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <h4><a href="https://ismir2023program.ismir.net/poster_235.html">FlexDTW</a></h4>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4><a href="https://www.youtube.com/watch?v=l96mWRDj1q0&t=659s">Michigan Recording Project</a></h4>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-slideshow"></i></div>
+            <h4><a href="https://www.youtube.com/watch?v=Id0pEVkDgKY&list=PLkz33iAd22aFt_XxKWG0OIjV1y1oplVkE&index=4">\newline Quartet</a></h4>
+            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-arch"></i></div>
+            <h4><a href="https://youtu.be/w9qSXlq-ydI?si=x0bRMXZPu2mAHmzH">Symphony Band</a></h4>
+            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>My Works</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-solo">Solo</li>
+            <li data-filter=".filter-small">Small Ensemble</li>
+            <li data-filter=".filter-large">Large Ensemble</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-large">
+          <div class="portfolio-wrap">
+            <img src="images/bg1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>The Venice of My Mind</h4>
+              <p>for Chamber Orchestra</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/35xbamOrH-8?si=SIgW0Ge8MOsQjDCS" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Program Notes"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>my body breaks, so I go to find replacements</h4>
+              <p>for guitar and voice</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/trm_4ROsBao?si=fdy3TJ4lTVCiLfj7" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Between You and the Surface</h4>
+              <p>for flute, clarinet, violin, and cello</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/Rdt7o0FfY8w?si=-nPo9ifc0dzn6vQ2" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>[De]structure</h4>
+              <p>for saxophone, bassoon, piano, and percussion</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/_6rIc36OfNk?si=nFd-j2TbhL2rO9Yr" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-solo">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>notice.</h4>
+              <p>for solo piano</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/eZy0lmZkzsg?si=RAvCU1to7-A0SDPc" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-solo">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>cute-speak</h4>
+              <p>for solo piano and tape</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/44vz-EC8JG8?si=twg7Z6N2ZC9iwLR_" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Suspicious Certainty</h4>
+              <p>for saxophone quartet</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/0OQK5G0LInk?si=qr8y88O70YGNVN_w" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Dollar Bidder Now!</h4>
+              <p>for percussion quartet</p>
+              <div class="portfolio-links">
+                <a href="https://www.youtube.com/embed/MCCpxUqDsks?si=HdLLSzvCyxKOF4wH" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-solo">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Bmpromptu</h4>
+              <p>for solo bassoon</p>
+              <div class="portfolio-links">
+                <a href="https://scorefol.io/w/jkR4VQqXrpZq3AnyCj9f" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>memento</h4>
+              <p>for cello and piano</p>
+              <div class="portfolio-links">
+                <a>Coming soon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>TBD</h4>
+              <p>for big band</p>
+              <div class="portfolio-links">
+                <a>Coming soon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Contact Me</p>
+      </div>
+
+      <div class="row mt-2">
+
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-envelope"></i>
+            <h3>Email Me</h3>
+            <p>zhangjt[at]umich[dot]edu</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-share-alt"></i>
+            <h3>Social Profiles</h3>
+            <div class="social-links">
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+      <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+        </div>
+        <div class="my-3">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+        </div>
+        <div class="text-center"><button type="submit">Send Message</button></div>
+      </form> -->
+
+    </div>
+  </section><!-- End Contact Section -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Typing animation -->
+  <script>
+    new TypeIt("#typed", {
+      speed: 100,
+      deleteSpeed: 80,
+      loop: true,
+      waitUntilVisible: true,
+    })
+    .type("composer")
+    .pause(1800)
+    .delete(4)
+    .type("uter scientist")
+    .pause(1800)
+    .delete(18)
+    .type("pianist")
+    .pause(1800)
+    .go()
+  </script>
+
+</body>
+
 </html>
