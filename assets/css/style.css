@@ -171,14 +171,14 @@ h6 {
   -moz-transition: all 0.2s;
 }
 .plant img {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-}
-.plant img:hover {
   filter: grayscale(0%);
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
+}
+.plant img:hover {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
 }
 
 .profile-pic img {
