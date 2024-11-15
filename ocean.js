@@ -52,7 +52,7 @@ class Rippler {
 }
 
 function preload() {
-  bodyPose = ml5.bodyPose("MoveNet", {flipped: true});
+  bodyPose = ml5.bodyPose("MoveNet");
 }
 
 function gotPoses(results) {
