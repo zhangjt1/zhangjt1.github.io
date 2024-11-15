@@ -10,7 +10,7 @@ like 90 or 60.
 const density = '011===--.  ';
 const len = density.length;
 
-const frmLen = 240;
+const frmLen = 60;
 
 let initPoints = [];
 let points = [];
