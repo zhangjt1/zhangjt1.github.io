@@ -160,7 +160,7 @@ function draw(){
         if (d < 100) {
           let x = (rx + lx) / 2;
           let y = (ry + ly) / 2;
-          if (!handsClose) {
+          if (!handsClose && ripplers.length <= 20) {
             ripplers.push(new Rippler(x, y));
             handsClose = true;
           }
