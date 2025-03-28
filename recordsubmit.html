@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .prompt {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            padding: 12px;
+            margin: 10px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:focus, button:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357ab7;
+        }
+
+        button:active {
+            background-color: #1e5c8b;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Record and Submit Audio</h2>
+        <div class="prompt">
+            What's a piece of advice you would give to 5 year old you? Limit your response to less than 2 minutes.
+        </div>
+        <div style="font-size: small;">
+            Enter in {LASTNAME}_{FIRSTNAME}, ex. ZHANG_JASON
+        </div>
+        <input id="filename" type="text" placeholder="to help with filenames (optional)">
+        <button id="record">Record</button>
+        <button id="stop" disabled>Stop</button>
+        <button id="submit" disabled>Submit</button>
+        <div style="font-size: small;"> The audio preview may take a bit to load if it's a longer recording</div>
+        <audio id="audio" controls></audio>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDdTGLXSUHtMV2wZsc48zFkveQ_A5TBKHA",
+            authDomain: "mfkrecordings.firebaseapp.com",
+            projectId: "mfkrecordings",
+            storageBucket: "mfkrecordings.firebasestorage.app",
+            messagingSenderId: "826633465965",
+            appId: "1:826633465965:web:61ac64889420344f240f64",
+            measurementId: "G-CJQQ9HDPKZ"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+
+        let mediaRecorder;
+        let audioChunks = [];
+        let audioBlob;
+        let recordTimer;
+        const recordButton = document.getElementById("record");
+        const stopButton = document.getElementById("stop");
+        const submitButton = document.getElementById("submit");
+        const audioElement = document.getElementById("audio");
+        const filenameInput = document.getElementById("filename");
+
+        // Record button functionality
+        recordButton.addEventListener("click", async () => {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            audioChunks = [];
+
+            mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+            mediaRecorder.onstop = () => {
+                audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+                audioElement.src = URL.createObjectURL(audioBlob);
+                submitButton.disabled = false;
+            };
+
+            mediaRecorder.start();
+            recordButton.disabled = true;
+            stopButton.disabled = false;
+
+            // Set a timer to stop recording after 1 minute (60000 ms)
+            recordTimer = setTimeout(() => {
+                mediaRecorder.stop();
+                recordButton.disabled = false;
+                stopButton.disabled = true;
+                alert("Recording automatically stopped after 2 minutes.");
+            }, 120000);
+        });
+
+        // Stop button functionality
+        stopButton.addEventListener("click", () => {
+            clearTimeout(recordTimer); // Clear the auto stop timer if manually stopped
+            mediaRecorder.stop();
+            recordButton.disabled = false;
+            stopButton.disabled = true;
+        });
+
+        // Submit button functionality
+        submitButton.addEventListener("click", () => {
+            let fileName = filenameInput.value.trim();
+            fileName = fileName ? `recordings/${fileName}.webm` : `recordings/${Date.now()}.webm`;
+
+            const storageRef = storage.ref(fileName);
+            storageRef.put(audioBlob).then(() => {
+                alert("Audio submitted successfully!");
+                submitButton.disabled = true;
+            }).catch(error => {
+                console.error("Upload failed: ", error);
+                alert("There was an error with the upload.");
+            });
+        });
+    </script>
+</body>
+</html>
