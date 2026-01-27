@@ -4,6 +4,8 @@
   <head>
     <link href="assets/css/style.css" rel="stylesheet">
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Music&display=swap" rel="stylesheet">
     <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
     <style>
       body {
@@ -13,6 +15,12 @@
         justify-content: center;
         min-height: 100vh;
         padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
       }
       
       #myForm {
@@ -69,10 +77,58 @@
         display: flex;
         justify-content: center;
       }
+
+      @font-face {
+        font-family: "Bravura";
+        src: url("fonts/Bravura.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      .smuFL {
+        font-family: "Bravura", sans-serif;
+        font-size: 48px;
+      }
+
+      .symbol-key {
+        margin-bottom: 30px;
+        border-collapse: collapse;
+      }
+
+      .symbol-key td {
+        padding: 0px 4px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+      }
+
+      .symbol-key .symbols {
+        font-family: "Bravura", sans-serif;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .symbol-key .description {
+        font-weight: 500;
+        color: whitesmoke;
+      }
     </style>
   </head>
   <body>
-    <form id="myForm">
+    <div class="container">
+      <table class="symbol-key">
+        <tr>
+          <td class="symbols">&#xE2C1; &#xE2C2; &#xE2C3;</td>
+          <td class="description">1/6 tone flat</td>
+        </tr>
+        <tr>
+          <td class="symbols">&#xE2C6; &#xE2C7; &#xE2C8;</td>
+          <td class="description">1/6 tone sharp</td>
+        </tr>
+        <tr>
+          <td class="symbols">&#xE280; &#xE281; &#xE282; &#xE283;</td>
+          <td class="description">Quartertones</td>
+        </tr>
+      </table>
+      <form id="myForm">
         <label>
             Frequency (Hz):
             <input type="number" name="frequency" step="any" min="20" max="20000" value="440">
@@ -84,7 +140,8 @@
             <option value="flat">Flat</option>
           </select>
         </label>
-    </form>
+      </form>
+    </div>
     
     <div id="result"></div>
 
