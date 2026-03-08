@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Web Client</title>
+    
+    <!-- CDN for socket.io + client script; web-client.js will handle wake lock on mobile -->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script type="module" defer src="static/web-client.js"></script> 
+    <link href="static/clock-style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="clock">
+        <div id="display">
+            00:00:00.0
+        </div>
+    </div>
+</body>
+</html>
