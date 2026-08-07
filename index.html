@@ -1,690 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Zhang — Composer &amp; Programmer</title>
+<meta name="description" content="Jason Zhang is a composer and software engineer working across concert music, interactive audio, and machine learning.">
 
-  <title>Jason Zhang's Website</title>
-  <meta content="" name="description">
-  <meta content="composer, programmer, researcher, technologist, creative programmer" name="keywords">
-
-  <!-- Favicons -->
-  <link href="images/favicon.png" rel="icon">
-  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="plant">
-      <a href="garden.html"><img src="images/plants3.png" width=22% class="img-fluid plant" style="position: absolute; top:0px; right:0px; z-index:1;" alt=""></a>
-    </div>
-    <div class="plant">
-      <a href="garden.html"><img src="images/plants1.png" width=30% class="img-fluid plant" style="position: absolute; bottom:0px; z-index:-5;" alt=""></a>
-    </div>
-    <div class="plant">
-      <a href="garden.html"><img src="images/plants2.png" width=50% class="img-fluid plant" style="position: absolute;  bottom:0px; right:0px; z-index:5;" alt=""></a>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1>Jason Zhang</h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-            
-            <h2>I'm a passionate <span id="typed"> </span> from Michigan</h2>
-  
-            <nav id="navbar" class="navbar">
-              <ul>
-                <li><a class="nav-link active" href="#header">Home</a></li>
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#events">Events</a></li>
-                <li><a class="nav-link" href="#projects">Projects</a></li>
-                <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li><a class="nav-link" href="#EECS440">Comp Sci</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-              </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-  
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/jason-zhang-cs/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              <a href="https://github.com/zhangjt1" class="github"><i class="bi bi-github"></i></a>
-              <a href="https://www.youtube.com/channel/UCsfHDT-QNeR8AM-p_pe73sQ" class="youtube"><i class="bi bi-youtube"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-6 profile-pic">
-          <img src="images/rainier.webp" class="img-fluid " width=100% alt="" style="border:5px solid whitesmoke">
-        </div>
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-inner">
+    <p class="xp-mark">Jason Zhang</p>
+    <div class="xp-bar-track">
+      <div class="xp-bar-blocks">
+        <span class="xp-block"></span>
+        <span class="xp-block"></span>
+        <span class="xp-block"></span>
+        <span class="xp-block"></span>
+        <span class="xp-block"></span>
       </div>
     </div>
-  </header><!-- End Header -->
+    <p class="loader-label" id="loaderLabel">Warming up&hellip;</p>
+  </div>
+</div>
 
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
+<div id="shader-gradient-root" aria-hidden="true"></div>
+<div id="shader-gradient-veil" aria-hidden="true"></div>
 
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
+<div id="page">
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">JZ</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#projects">CS Projects</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Learn more about me</p>
+<header class="hero" id="top">
+  <div id="vanta-birds" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-row">
+      <div class="hero-text">
+        <p class="eyebrow">Composer / Software Engineer / Researcher</p>
+        <h1>Jason<br><em>Zhang</em></h1>
+        <p class="hero-sub">Writing concert music and interactive systems that listen to each other &mdash; scores, signal processing, and the occasional line of Unreal Engine blueprint.</p>
+        <p class="hero-meta">Music Technology Student at MIT &mdash; Cambridge, MA</p>
+        <div class="staff" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       </div>
-
-      <div class="row">
-        <div class="col-lg-4 d-flex flex-column align-items-center" data-aos="fade-right" style="min-height: 100vh;">
-          <img src="images/profile_corporate.jpg" class="img-fluid mb-3" alt="" style="border:5px solid whitesmoke">
-          <img src="images/profile_sea.jpg" class="img-fluid" alt="" style="border:5px solid whitesmoke">
+      <div class="hero-photo-slot">
+        <div class="hero-photo" id="heroPhoto" tabindex="0" role="button" aria-label="Portrait of Jason Zhang. Hover to tilt it, double-click to knock it off the wall.">
+          <span class="hero-photo-initials" aria-hidden="true">JZ</span>
+          <img src="images/Zhang-Profile.JPG" alt="Jason Zhang">
         </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Composer - Pianist - Programmer</h3>
-          <p class="fst-italic">
-            Freelance Composer &amp; Software Engineer @ Autodesk
-          </p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://zhangjt1.github.io/</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>University of Michigan</span></li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>zhangjt[at]umich[dot]edu</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BM in Composition <br> BSE in Computer Science </span></li>
-              </ul>
-            </div>
-          </div>
-          <p>
-            I'm a recent graduate from the University of Michigan, where I studied Composition and Computer Science. My mentors in composition were
-            Bright Sheng, Micheal Daugherty, Roshanne Etezady and Evan Chambers. I have studied piano with Matthew Bengtson and chamber music
-            with Matt Albert. <br> <br>
-            On the computer science side, I'm interested in machine learning, particulary various transformer architectures and their potential applications to 
-            generative music. I'm also dipping my toes into signal processing. I have a published paper at ISMIR 2023 you can check out <a href="https://par.nsf.gov/servlets/purl/10520545">here</a>. <br> <br>
-
-            On the music side, I'm currently working on incorporating more improvisation and electronics like live-processing (Max, Hydra, Javascript p5) into
-            my music as well as becoming more familiar with synthesising sound and producing. I've been awarded a <a href="https://www.mtna.org/downloads/competitions/2020%20Competition%20Book_Final.pdf">MTNA National Composition Award</a>, 
-            a <a href="https://www.composersconference.org/fromm-foundation-composer-fellowship">Fromm Foundation Composition Fellowship</a>, the <a href="https://www.bmi.com/news/entry/bmi-foundation-announces-73rd-annual-bmi-composer-award-winners">2025 Carlos Surinach BMI Composer Award</a>, and have had my work featured on <a href="https://www.youtube.com/watch?v=HnDWWclzwIw">Score Follower</a>.
-            I have the opportunity to work with professional ensembles such as Hub New Music, Hypercube, TEMPO Ensemble, Bergamot Quartet, Attacca Quartet, Nova Linea Musica Trio, and Loadbang.
-            I've also written for amazing musicians such as Natalia Kazaryan, and Gabriel Cabezas. During my time at the Univerity of Michigan I was able to work with Jayce Ogren with the Contemporary Directions Ensemble,
-            and Mike Roest with the University Philharmonia Orchestra.
-            I'm currently working on pieces for the Unheard-Of Ensemble and the Akropolis Quintet.
-             I write mostly classical concert music, though I am branching out,
-            and eager to do more in film and video games.  <br> <br>
-            Check out some articles I've written for the <a href="https://www.michigandaily.com/arts/music/popular-misconceptions-that-might-be-stopping-you-from-going-to-the-symphony/">Michigan Daily</a>! <br> <br>
-            Lasted updated May 2026. <br> <br>
-            <a href="https://drive.google.com/file/d/10_Boaik6as_0y66D6DU_W002wCw9PyTQ/view?usp=sharing">CV</a>
-          </p>
-        </div>
-      </div>
-    </div><!-- End About Me -->
-
-    <!-- ======= Skills  ======= -->
-    <div class="skills container">
-
-      <div class="section-title">
-        <h2>Coding Languages</h2>
-      </div>
-
-      <div class="row skills-content">
-        <div class="col-lg-6">
-          <div class="progress">
-            <span class="skill">Python <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">C++ <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">C <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">SQL <i class="val">65%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">Java<i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-          <div class="progress">
-            <span class="skill">JavaScript <i class="val">60%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center">
-          <img src="images/bg1.jpg" class="img-fluid" alt="">
-        </div>
-      </div>
-      
-    </div><!-- End Skills -->
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Other Interests</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-            <h3>Hiking</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-            <h3>Gardening</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-            <h3>Journalism</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-            <h3>Crosswords</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-            <h3>Traditional Chinese Flutes</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-            <h3>Guitar</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3>Violin</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-            <h3>Dogs</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
-
-  </section><!-- End About Section -->
-
-  <!-- ======= Events Section ======= -->
-  <section id="events" class="events">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Events</h2>
-        <p>Upcoming and past events</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="events-title">Upcoming Events</h3>
-
-          <div class="event">
-            <div class="event-date">Jan 24, 2026</div>
-            <h4 class="event-title">sputter-stutter-stuck-spark</h4>
-            <p class="event-location"><em>Musica Reginae, Queens, NYC</em></p>
-            <p class="event-desc">New piece for Hypercube <a href="https://www.musicareginae.org/current-season/hypercube-thinking-outside-of-the-box">RSVP</a></p>
-          </div>
-
-        <div class="event">
-          <div class="event-date">Mar 28, 2026</div>
-          <h4 class="event-title">like Clockwork, perpetuum</h4>
-          <p class="event-location"><em>Swasey Chapel, Denison University, Columbus, Ohio</em></p>
-          <p class="event-desc">Attacca Quartet playing as part of VAIL series <a href="https://denison.edu/events/event/158360">Tickets</a></p>
-        </div>
-
-        <div class="event">
-          <div class="event-date">Apr 19th, 2026</div>
-          <h4 class="event-title">Messages to Space</h4>
-          <p class="event-location"><em>McIntosh Hall,University of Michigan</em></p>
-          <p class="event-desc">New piece for 2 violas, harpsichord, and fixed media for Emmanuel's Master Recital</p>
-        </div>
-
-        <div class="event">
-          <div class="event-date">May 27th, 2026</div>
-          <h4 class="event-title">God is in the Details</h4>
-          <p class="event-location"><em>The CheckOut, Chicago IL</em></p>
-          <p class="event-desc">New piece for the NLM Piano Trio <a href="https://dice.fm/event/xedl7k-nova-linea-musica-concert-of-world-premieres-27th-may-the-checkout-chicago-tickets?pid=F3RKGQIQ&_branch_match_id=1363155452542039499&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1XdKS040MTNKSjZLMrEvyEyxdTMO8nYP9AxUqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUASAMNQEgAAAA%3D">Tickets</a></p>
-        </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Events Section -->
-
-  <!-- ======= Projects Section ======= -->
-  <section id="projects" class="projects">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Projects / Recordings</h2>
-        <p>My Projects</p>
-      </div>
-
-      <div class="row" style="border: 3px ghostwhite solid; border-radius: 3px;">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4><a href="https://counterpoint-checker.github.io/">Counterpoint Checker</a></h4>
-            <p>Currently deprecated, a website that aimed to automatically grade counterpoint, an 18th
-              century practice that is still used to teach harmony to music students today.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="https://www.sfsymphony.org/Buy-Tickets/2023-24/SoundBox-CAROL-REILEY">Press Play</a></h4>
-            <p>Aided Carol Reiley in producing and curating a concert that combined classical music with AI and robots. Created a 
-              video that utilized ControlNet and AnimateDiff to apply AI filters to videos of people dancing.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4><a href="https://ismir2023program.ismir.net/poster_235.html">FlexDTW</a></h4>
-            <p>Coauthored a paper with Irmak Bukey and TJ Tsai detailing an alignment algorithm that is designed to handle a 
-              wide range of boundary conditions.
-            </p>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div class="row" style="border: 3px ghostwhite solid; border-radius: 3px;">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4><a href="https://www.youtube.com/watch?v=l96mWRDj1q0&t=659s">Michigan Recording Project</a></h4>
-            <p>Professionally recorded "Arcana" by Rudolf Escher as part of the Michigan Recording Project, a project
-              aimed at establishing an archive of worthy but overlooked piano repetoire.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-slideshow"></i></div>
-            <h4><a href="https://www.youtube.com/@newline-r4o/playlists">\newline Quartet</a></h4>
-            <p>Founded a new music quartet comprised of a unique combination of saxophone, bassoon, piano, and percussion. Commissioned
-              9 new works for the medium to date.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-arch"></i></div>
-            <h4><a href="https://youtu.be/w9qSXlq-ydI?si=x0bRMXZPu2mAHmzH">Symphony Band</a></h4>
-            <p>Played keyboard in Symphony Band under the baton of Robert Reynolds, Michael Haithcock, and Jason Fettig. Premiered many pieces and arrangements
-              including those by Larry Tuttle, Michael Daugherty, Evan Hause, James Lee III and Jeremy Kittel.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <p>My Works</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-solo">Solo</li>
-            <li data-filter=".filter-small">Small Ensemble</li>
-            <li data-filter=".filter-large">Large Ensemble</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-        <div class="col-lg-4 col-md-6 portfolio-item filter-large">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>The Venice of My Mind</h4>
-              <p>for Chamber Orchestra</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/35xbamOrH-8?si=SIgW0Ge8MOsQjDCS" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>my body breaks, so I go to find replacements</h4>
-              <p>for guitar and voice</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/trm_4ROsBao?si=fdy3TJ4lTVCiLfj7" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>Between You and the Surface</h4>
-              <p>for flute, clarinet, violin, and cello</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/Rdt7o0FfY8w?si=-nPo9ifc0dzn6vQ2" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>[De]structure</h4>
-              <p>for saxophone, bassoon, piano, and percussion</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/_6rIc36OfNk?si=nFd-j2TbhL2rO9Yr" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-solo">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-6.png" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>cute-speak</h4>
-              <p>for solo piano and tape</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/Z1eIQQDVBWk?si=bDUYAh9gZP4-4RZX" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.png" class="img-fluid" alt="" width="400" height="300">
-            <div class="portfolio-info">
-              <h4>Suspicious Certainty</h4>
-              <p>for saxophone quartet</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/0OQK5G0LInk?si=qr8y88O70YGNVN_w" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-8.webp" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Dollar Bidder Now!</h4>
-              <p>for percussion quartet</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/MCCpxUqDsks?si=HdLLSzvCyxKOF4wH" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-solo">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-9.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Bmpromptu</h4>
-              <p>for solo bassoon</p>
-              <div class="portfolio-links">
-                <a href="https://scorefol.io/w/jkR4VQqXrpZq3AnyCj9f" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-10.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>memento</h4>
-              <p>for cello and piano</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/x3G4wKOwtdo?si=hMMYYLiuTx-947XC" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-13.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>like Clockwork, perpetuum</h4>
-              <p>for string quartet</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/NoxXtp2wbME?si=ds4FIRNvsM1Rfwz7" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-large">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-11.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Be Not Afraid</h4>
-              <p>for orchestra</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/L6webqct-hQ?si=a-JjI9H9EUWZAkva" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-small">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-12.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>MUSIC FOR KIDS</h4>
-              <p>for chamber ensemble and electronics</p>
-              <div class="portfolio-links">
-                <a href="https://www.youtube.com/embed/VALctepmKMg?si=SnS5yKKc24LkS6Td" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= EECS 440 Section ======= -->
-  <section id="EECS440" class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Computer Science Projects</h2>
-        <p>Projects</p>
-        <h3>P1 - VR Cheating Simulator</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NhvMF5_HwlY?si=mqjozFQOe5KvRKrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br>
-        <span>Built using Unreal Engine (5.4.2), and planned using Jira. Interactive logic built using blueprints. Assets from freesound, Quixel, and sketchfab.</span>
-        <br>
-        <h3>P2 - Ann Arbor Pokemon Go</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/8PNN-zGYXC4?si=I2OSLFVY_-1Kphg6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lMtFmRXZqiE?si=lo_W9kyfcl8-CjZB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br>
-        <span>Built using Unity Engine (2022.3.50f1), and planned using Jira. Interactive logic built using Unity C#. Assets from freesound, Unity Asset Store, and sketchfab.</span>
-        <br>
-        <h3>P3 - Melody Grove</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YQUOjIoJmQQ?si=ichqjcFXSZ3ZAL-5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br>
-        <span>Built using Unity Engine (2022.3.50f1), sounds composed in Logic Pro X, and planned using Jira. Interactive logic built using Unity C#. Assets from freesound, Unity Asset Store, and sketchfab. Interactive AR spatial audio playground. Check out our <a href="https://zhangjt.wixsite.com/music-space-dev-log">website</a>!</span>
-        <br>
-        <h3>Hand Synth</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZynIq1eQp54?si=orpU4Ino-whmJWHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <br>
-        <span>Built using Max, FAUST, and Google's MediaPipe hand tracking.</span>
-        <br>
       </div>
     </div>
-  </section><!-- End EECS 440 Section -->
+  </div>
+</header>
 
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Me</h3>
-            <p>zhangjt[at]umich[dot]edu</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-      <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
-        <div class="row">
-          <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-          </div>
-        </div>
-        <div class="form-group mt-3">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-        </div>
-        <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-        </div>
-        <div class="my-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
-      </form> -->
-
+<section id="about">
+  <div class="wrap about">
+    <div class="section-head reveal">
+      <p class="eyebrow">About</p>
+      <h2>Composer, pianist, programmer</h2>
     </div>
-  </section><!-- End Contact Section -->
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <div class="about-grid reveal">
+      <div class="about-copy">
+        <figure class="about-photo about-photo--one reveal">
+          <span class="about-photo-label" aria-hidden="true">Photo</span>
+          <img src="images/profile_corporate.jpg" alt="Jason Zhang">
+        </figure>
+        <p>Can a meme save the world? Can computers write 18th-century counterpoint?</p>
+        <p>These are the kinds of questions I return to in my creative process. My work explores the intersections of internet culture, humor, technology, and classical music. I'm interested in treating the internet as a form of digital folklore: a constantly evolving collection of stories, symbols, jokes, and rituals that reveal how people make sense of the world.</p>
+        <p>On the technical side, I'm interested in machine learning &mdash; particularly transformer architectures and their applications to generative music &mdash; and I'm increasingly drawn to signal processing. My paper from ISMIR 2023 is <a href="https://par.nsf.gov/servlets/purl/10520545">available here</a>.</p>
+        <p>Musically, I'm folding more improvisation and live electronics into my work &mdash; Max, Hydra, p5.js &mdash; and getting more comfortable with synthesis and production. I write mostly for the concert stage, with recent commissions from Hub New Music, Hypercube, TEMPO Ensemble, Bergamot Quartet, Attacca Quartet, Nova Linea Musica Trio, and loadbang, and pieces written for Natalia Kazaryan and Gabriel Cabezas. At Michigan I worked with Jayce Ogren and the Contemporary Directions Ensemble, and Mike Roest with the University Philharmonia Orchestra. I'm currently writing for the Unheard-Of Ensemble and the Akropolis Quintet.</p>
+        <p>I'm a recent graduate of the University of Michigan, where I studied composition and computer science. My composition mentors were Bright Sheng, Michael Daugherty, Roshanne Etezady, and Evan Chambers; I studied piano with Matthew Bengtson and chamber music with Matt Albert. I will be starting my master's in music technology at MIT in the fall, advised by Paris Smaragdis.</p>
+        <figure class="about-photo about-photo--two reveal">
+          <span class="about-photo-label" aria-hidden="true">Photo</span>
+          <img src="images/profile_sea.jpg" alt="Jason Zhang">
+        </figure>
+        <p>Recognition includes an <a href="https://www.mtna.org/downloads/competitions/2020%20Competition%20Book_Final.pdf">MTNA National Composition Award</a>, a <a href="https://www.composersconference.org/fromm-foundation-composer-fellowship">Fromm Foundation Composition Fellowship</a>, the <a href="https://www.bmi.com/news/entry/bmi-foundation-announces-73rd-annual-bmi-composer-award-winners">2025 Carlos Surinach BMI Composer Award</a>, and a feature on <a href="https://www.youtube.com/watch?v=HnDWWclzwIw">Score Follower</a>. I've also written a few pieces for the <a href="https://www.michigandaily.com/arts/music/popular-misconceptions-that-might-be-stopping-you-from-going-to-the-symphony/">Michigan Daily</a> on concert-going.</p>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <!-- Typing animation -->
-  <script>
-    new TypeIt("#typed", {
-      speed: 100,
-      deleteSpeed: 80,
-      loop: true,
-      waitUntilVisible: true,
-    })
-    .type("composer")
-    .pause(1800)
-    .delete(4)
-    .type("uter scientist")
-    .pause(1800)
-    .delete(18)
-    .type("pianist")
-    .pause(1800)
-    .go()
-  </script>
+        <a class="cv-link" href="https://drive.google.com/file/d/10_Boaik6as_0y66D6DU_W002wCw9PyTQ/view?usp=sharing">View CV</a>
+
+        <dl class="about-facts">
+          <div><dt>Website</dt><dd>zhangjt1.github.io</dd></div>
+          <div><dt>Email</dt><dd>zhangjt [at] umich [dot] edu</dd></div>
+          <div><dt>School</dt><dd>MIT</dd> <dd>University of Michigan</dd></div>
+          <div><dt>Degree</dt><dd>MASc Music Technology</dd> <dd>BM Composition, BSE Computer Science</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="section-head section-head--spaced reveal">
+      <p class="eyebrow">Other interests</p>
+    </div>
+    <div class="tag-list reveal-group">
+      <span class="tag">Hiking</span>
+      <span class="tag">Gardening</span>
+      <span class="tag">Journalism</span>
+      <span class="tag">Crosswords</span>
+      <span class="tag">Traditional Chinese flutes</span>
+      <span class="tag">Guitar</span>
+      <span class="tag">Violin</span>
+      <span class="tag">Dogs</span>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Events</p>
+      <h2>Upcoming performances</h2>
+    </div>
+    <div class="event-list reveal-group">
+      <div class="event">
+        <div class="event-date">Jan 24, 2026</div>
+        <div>
+          <div class="event-title">sputter&#8209;stutter&#8209;stuck&#8209;spark</div>
+          <div class="event-loc">Musica Reginae, Queens, NYC</div>
+          <p class="event-desc">New piece for Hypercube. <a href="https://www.musicareginae.org/current-season/hypercube-thinking-outside-of-the-box">RSVP</a></p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">Mar 28, 2026</div>
+        <div>
+          <div class="event-title">like Clockwork, perpetuum</div>
+          <div class="event-loc">Swasey Chapel, Denison University, Columbus, OH</div>
+          <p class="event-desc">Attacca Quartet, part of the VAIL series. <a href="https://denison.edu/events/event/158360">Tickets</a></p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">Apr 19, 2026</div>
+        <div>
+          <div class="event-title">Messages to Space</div>
+          <div class="event-loc">McIntosh Hall, University of Michigan</div>
+          <p class="event-desc">New piece for two violas, harpsichord, and fixed media, for Emmanuel's master recital.</p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">May 27, 2026</div>
+        <div>
+          <div class="event-title">God is in the Details</div>
+          <div class="event-loc">The CheckOut, Chicago, IL</div>
+          <p class="event-desc">New piece for the NLM Piano Trio. <a href="https://dice.fm/event/xedl7k-nova-linea-musica-concert-of-world-premieres-27th-may-the-checkout-chicago-tickets?pid=F3RKGQIQ&_branch_match_id=1363155452542039499&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1XdKS040MTNKSjZLMrEvyEyxdTMO8nYP9AxUqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUASAMNQEgAAAA%3D">Tickets</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Computer science</p>
+      <h2>Selected projects</h2>
+    </div>
+    <div class="project-list reveal-group">
+      <div class="project">
+        <div>
+          <h3>VR Cheating Simulator</h3>
+          <p>Built in Unreal Engine 5.4.2 with blueprint-driven interactive logic; planned in Jira. Assets from freesound, Quixel, and Sketchfab.</p>
+        </div>
+        <a class="project-link" href="https://www.youtube.com/watch?v=NhvMF5_HwlY">Watch demo &rarr;</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Ann Arbor Pokemon Go</h3>
+          <p>Built in Unity 2022.3.50f1 with C# interactive logic; planned in Jira. Assets from freesound, the Unity Asset Store, and Sketchfab.</p>
+        </div>
+        <a class="project-link" href="https://www.youtube.com/watch?v=8PNN-zGYXC4">Watch demo &rarr;</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Melody Grove</h3>
+          <p>An interactive AR spatial-audio playground. Built in Unity with C#; sound composed in Logic Pro X; planned in Jira. <a href="https://zhangjt.wixsite.com/music-space-dev-log">Dev log &rarr;</a></p>
+        </div>
+        <a class="project-link" href="https://www.youtube.com/watch?v=YQUOjIoJmQQ">Watch demo &rarr;</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Hand Synth</h3>
+          <p>A gestural synthesizer built with Max, FAUST, and Google's MediaPipe hand-tracking.</p>
+        </div>
+        <a class="project-link" href="https://www.youtube.com/watch?v=ZynIq1eQp54">Watch demo &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <canvas id="ascii-water" aria-hidden="true"></canvas>
+  <div class="wrap-wide">
+    <div class="section-head reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected works</h2>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filter works by ensemble size">
+      <button type="button" class="active" data-filter="all">All</button>
+      <button type="button" data-filter="solo">Solo</button>
+      <button type="button" data-filter="small">Small ensemble</button>
+      <button type="button" data-filter="large">Large ensemble</button>
+    </div>
+
+    <div class="works-grid reveal-group" id="worksGrid">
+      <div class="work" data-cat="large">
+        <h4>The Venice of My Mind</h4>
+        <div class="instr">for chamber orchestra</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=35xbamOrH-8">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>my body breaks, so I go to find replacements</h4>
+        <div class="instr">for guitar and voice</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=trm_4ROsBao">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>Between You and the Surface</h4>
+        <div class="instr">for flute, clarinet, violin, and cello</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=Rdt7o0FfY8w">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>[De]structure</h4>
+        <div class="instr">for saxophone, bassoon, piano, and percussion</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=_6rIc36OfNk">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="solo">
+        <h4>cute&#8209;speak</h4>
+        <div class="instr">for solo piano and tape</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=Z1eIQQDVBWk">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>Suspicious Certainty</h4>
+        <div class="instr">for saxophone quartet</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=0OQK5G0LInk">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>Dollar Bidder Now!</h4>
+        <div class="instr">for percussion quartet</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=MCCpxUqDsks">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="solo">
+        <h4>Bmpromptu</h4>
+        <div class="instr">for solo bassoon</div>
+        <a class="listen" href="https://scorefol.io/w/jkR4VQqXrpZq3AnyCj9f">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>memento</h4>
+        <div class="instr">for cello and piano</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=x3G4wKOwtdo">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>like Clockwork, perpetuum</h4>
+        <div class="instr">for string quartet</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=NoxXtp2wbME">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="large">
+        <h4>Be Not Afraid</h4>
+        <div class="instr">for orchestra</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=L6webqct-hQ">Listen &rarr;</a>
+      </div>
+      <div class="work" data-cat="small">
+        <h4>MUSIC FOR KIDS</h4>
+        <div class="instr">for chamber ensemble and electronics</div>
+        <a class="listen" href="https://www.youtube.com/watch?v=VALctepmKMg">Listen &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+    </div>
+    <div class="contact-grid reveal-group">
+      <div class="contact-card">
+        <p class="eyebrow">Email</p>
+        <a href="mailto:zhangjt@umich.edu">zhangjt [at] umich [dot] edu</a>
+      </div>
+      <div class="contact-card">
+        <p class="eyebrow">For</p>
+        <p>Collaborations, commissions, and research conversations.</p>
+      </div>
+    </div>
+    <div class="staff tight staff--contact" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<footer>
+  Jason Zhang &mdash; last updated May 2026
+</footer>
+</div><!-- /#page -->
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "three": "https://esm.sh/three@0.160.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.17.10?deps=react@18.3.1,react-dom@18.3.1,three@0.160.0",
+    "three-stdlib": "https://esm.sh/three-stdlib@2.29.4?deps=three@0.160.0",
+    "camera-controls": "https://esm.sh/camera-controls@2.9.0?deps=three@0.160.0",
+    "@shadergradient/react": "https://esm.sh/@shadergradient/react@2.4.20?deps=react@18.3.1,react-dom@18.3.1,three@0.160.0,@react-three/fiber@8.17.10,three-stdlib@2.29.4,camera-controls@2.9.0"
+  }
+}
+</script>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
-
 </html>
