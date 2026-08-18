@@ -271,7 +271,67 @@ h1, h2, h3, h4{
   font-size: 13px;
   color: var(--ink-faint);
 }
-.hero .staff{ margin-top: 46px; }
+/* ---------- interactive staff (rendered by Verovio) ---------- */
+.hero-staff-wrap{
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-top: 46px;
+}
+.hero-staff{
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 96px;
+  color: var(--ink);
+}
+.hero-staff svg{ display: block; overflow: visible; width: 100%; height: auto; }
+.hero-staff svg * { fill: currentColor; stroke: currentColor; }
+.hero-staff svg g.note{ transition: color .15s ease; }
+.hero-staff svg g.note.is-active{ color: var(--brass, #a07a35); }
+.staff-note{
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform .15s ease, background-color .15s ease;
+}
+.staff-note:hover,
+.staff-note:focus-visible{
+  background: rgba(160,122,53,0.25);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+.staff-note.is-playing{ animation: staff-note-ripple .5s ease-out; }
+@keyframes staff-note-ripple{
+  0%   { box-shadow: 0 0 0 0 rgba(160,122,53,0.55); }
+  100% { box-shadow: 0 0 0 11px rgba(160,122,53,0); }
+}
+.staff-play{
+  flex: none;
+  width: 108px;
+  margin: 0 0 6px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: var(--ink-faint);
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  transition: color .15s ease;
+}
+.staff-play:hover,
+.staff-play:focus-visible{ color: var(--brass, #a07a35); }
+.staff-play.is-playing{ color: var(--brass, #a07a35); }
 
 .hero-row{
   display: flex;
@@ -306,6 +366,41 @@ h1, h2, h3, h4{
   transform: rotate(4deg) scale(1.04);
 }
 .hero-photo.is-loose{ transition: none; }
+.hero-photo-slot.is-empty{
+  border: 2px dashed var(--line-strong);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+.hero-photo--landed{
+  position: relative;
+  margin: 0;
+  cursor: default;
+  transform: rotate(174deg);
+  transform-origin: 50% 50%;
+  animation: hero-photo-land .62s cubic-bezier(.22,.61,.36,1) both,
+             hero-photo-thud .62s ease-out both;
+}
+.hero-photo--landed:hover,
+.hero-photo--landed:focus-visible{
+  transform: rotate(178deg) scale(1.04);
+}
+@keyframes hero-photo-land{
+  0%   { transform: translateY(-46px) rotate(184deg) scale(1, 1); opacity: 0; }
+  12%  { opacity: 1; }
+  48%  { transform: translateY(2px) rotate(172deg) scale(1.22, 0.74); }
+  64%  { transform: translateY(-6px) rotate(176deg) scale(0.93, 1.08); }
+  78%  { transform: translateY(1px) rotate(173deg) scale(1.04, 0.97); }
+  90%  { transform: translateY(0) rotate(174deg) scale(0.99, 1.01); }
+  100% { transform: translateY(0) rotate(174deg) scale(1, 1); }
+}
+@keyframes hero-photo-thud{
+  0%, 44% { box-shadow: 0 12px 28px rgba(23,25,27,0.16); }
+  50%     { box-shadow: 0 3px 8px rgba(23,25,27,0.4), 0 0 0 5px rgba(0,0,0,0.05); }
+  100%    { box-shadow: 0 12px 28px rgba(23,25,27,0.16); }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-photo--landed{ animation: none; }
+}
 .hero-photo-initials{
   position: absolute;
   inset: 0;
@@ -456,6 +551,48 @@ section + section{ border-top: 1px solid var(--line); }
 @media (max-width: 560px){ .event{ grid-template-columns: 1fr; gap: 6px; } }
 
 /* ---------- projects ---------- */
+#projects{ overflow: hidden; }
+.jellyfish{
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  transform-origin: 50% 12%;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+}
+.jellyfish--1{
+  top: 6%;
+  right: 3%;
+  width: 195px;
+  height: auto;
+  animation: jellyfish-swim-a 15s ease-in-out infinite;
+}
+.jellyfish--2{
+  bottom: 8%;
+  left: 4%;
+  width: 165px;
+  height: auto;
+  animation: jellyfish-swim-b 12s ease-in-out infinite;
+  animation-delay: -4s;
+}
+@keyframes jellyfish-swim-a{
+  0%   { transform: translate(0, 0) scale(1, 1) rotate(0deg); }
+  25%  { transform: translate(8px, -18px) scale(0.96, 1.05) rotate(2deg); }
+  50%  { transform: translate(-6px, -30px) scale(1.03, 0.95) rotate(-1.5deg); }
+  75%  { transform: translate(-10px, -14px) scale(0.97, 1.04) rotate(1.5deg); }
+  100% { transform: translate(0, 0) scale(1, 1) rotate(0deg); }
+}
+@keyframes jellyfish-swim-b{
+  0%   { transform: translate(0, 0) scale(1, 1) rotate(0deg); }
+  30%  { transform: translate(-7px, -16px) scale(0.97, 1.04) rotate(-2deg); }
+  55%  { transform: translate(5px, -26px) scale(1.02, 0.96) rotate(1.5deg); }
+  80%  { transform: translate(9px, -10px) scale(0.98, 1.03) rotate(-1deg); }
+  100% { transform: translate(0, 0) scale(1, 1) rotate(0deg); }
+}
+@media (max-width: 860px){
+  .jellyfish{ display: none; }
+}
+
 .project-list{ display: flex; flex-direction: column; }
 .project{
   padding: 26px 0;
@@ -530,6 +667,17 @@ footer{
   background: var(--paper);
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+/* once a photo has landed, the padding is dropped so the photo itself
+   (clipped by the footer's own edge) forms the true bottom of the page */
+footer:has(.footer-fallen:not(:empty)){ padding-bottom: 0; }
+.footer-fallen{ display: flex; justify-content: center; }
+.footer-fallen:not(:empty){
+  margin-top: 22px;
+  /* pulled down so roughly the bottom third of the photo sits past the
+     page's edge, as if it fell half off-screen and got stuck poking out */
+  transform: translateY(78px);
 }
 
 /* ---------- utilities ---------- */

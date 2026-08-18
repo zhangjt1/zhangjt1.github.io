@@ -65,6 +65,260 @@
 })();
 
 (function(){
+  var container = document.getElementById('heroStaff');
+  var playBtn = document.getElementById('staffPlay');
+  if (!container) return;
+
+  var VEROVIO_SRC = 'https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js';
+
+  var melody = [
+    { pitch: 'e', freq: 622.25, label: 'E-flat 5' },
+    { pitch: 'f', freq: 698.46, label: 'F5' },
+    { pitch: 'g', freq: 783.99, label: 'G5' },
+    { pitch: 'f', freq: 698.46, label: 'F5' },
+    { pitch: 'e', freq: 622.25, label: 'E-flat 5' },
+    { pitch: 'd', freq: 587.33, label: 'D5' },
+    { pitch: 'e', freq: 622.25, label: 'E-flat 5' }
+  ];
+  var abc = [
+    'X:1',
+    'L:1/8',
+    'K:Eb clef=treble',
+    melody.map(function(m){ return m.pitch; }).join('') + '|'
+  ].join('\n');
+
+  var AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  var audioCtx = null;
+
+  function getContext(){
+    if (!AudioContextClass) return null;
+    if (!audioCtx) audioCtx = new AudioContextClass();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  // Real sampled piano notes (tiny mp3s, one per unique pitch in the melody),
+  // with a synthesized fallback tone in case a sample fails to load.
+  var PIANO_BASE = 'https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/acoustic_grand_piano-mp3/';
+  var PIANO_SAMPLE_NAMES = { e: 'Eb5', f: 'F5', g: 'G5', d: 'D5' };
+  var pianoBuffers = {};
+
+  function loadPianoSamples(){
+    var ctx = getContext();
+    if (!ctx) return;
+    Object.keys(PIANO_SAMPLE_NAMES).forEach(function(pitch){
+      fetch(PIANO_BASE + PIANO_SAMPLE_NAMES[pitch] + '.mp3')
+        .then(function(res){ return res.arrayBuffer(); })
+        .then(function(data){ return ctx.decodeAudioData(data); })
+        .then(function(buffer){ pianoBuffers[pitch] = buffer; })
+        .catch(function(){ /* silently fall back to the synth tone */ });
+    });
+  }
+  loadPianoSamples();
+
+  function playTone(freq, duration){
+    var ctx = getContext();
+    if (!ctx) return;
+    duration = duration || 1.1;
+
+    var now = ctx.currentTime;
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, now);
+
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.28, now + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + duration + 0.05);
+  }
+
+  function playNote(note, fade){
+    var ctx = getContext();
+    var buffer = ctx && pianoBuffers[note.pitch];
+    if (!ctx) return;
+    if (!buffer) { playTone(note.freq, fade); return; }
+
+    fade = fade || 1.8;
+    var now = ctx.currentTime;
+    var src = ctx.createBufferSource();
+    var gain = ctx.createGain();
+    src.buffer = buffer;
+
+    gain.gain.setValueAtTime(0.9, now);
+    gain.gain.setValueAtTime(0.9, now + fade * 0.6);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + fade);
+
+    src.connect(gain);
+    gain.connect(ctx.destination);
+    src.start(now);
+    src.stop(now + fade + 0.05);
+  }
+
+  function loadScript(src){
+    return new Promise(function(resolve, reject){
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  function waitForVerovio(){
+    return new Promise(function(resolve){
+      (function poll(){
+        try {
+          if (window.verovio && window.verovio.toolkit) {
+            new window.verovio.toolkit();
+            resolve();
+            return;
+          }
+        } catch (e) {}
+        setTimeout(poll, 60);
+      })();
+    });
+  }
+
+  var tk = null;
+  var noteEls = [];
+  var playTimers = [];
+
+  function flashNote(i){
+    var el = noteEls[i];
+    if (!el) return;
+    el.classList.add('is-active');
+    setTimeout(function(){ el.classList.remove('is-active'); }, 260);
+  }
+
+  function stopSequence(){
+    playTimers.forEach(clearTimeout);
+    playTimers = [];
+    noteEls.forEach(function(el){ el.classList.remove('is-active'); });
+    if (playBtn) {
+      playBtn.classList.remove('is-playing');
+      playBtn.innerHTML = '&#9656; Play phrase';
+    }
+  }
+
+  function playSequence(){
+    if (!tk || !noteEls.length) return;
+    stopSequence();
+
+    var timemap;
+    try { timemap = tk.renderToTimemap({}); } catch (e) { timemap = null; }
+    if (!timemap || !timemap.length) return;
+
+    var onEvents = timemap.filter(function(e){ return e.on && e.on.length; });
+    var bpm = 92;
+    var msPerQuarter = 60000 / bpm;
+    var noteFade = 0.9;
+
+    if (playBtn) {
+      playBtn.classList.add('is-playing');
+      playBtn.innerHTML = '&#9632; Playing\u2026';
+    }
+
+    onEvents.forEach(function(evt, i){
+      var melodyNote = melody[i];
+      var timer = setTimeout(function(){
+        if (melodyNote) playNote(melodyNote, noteFade);
+        flashNote(i);
+      }, evt.qstamp * msPerQuarter);
+      playTimers.push(timer);
+    });
+
+    var lastStamp = onEvents.length ? onEvents[onEvents.length - 1].qstamp : 0;
+    playTimers.push(setTimeout(stopSequence, lastStamp * msPerQuarter + msPerQuarter + 200));
+  }
+
+  function renderStaff(){
+    if (!tk) return;
+    stopSequence();
+
+    try {
+      tk.setOptions({
+        scale: 100,
+        breaks: 'none',
+        adjustPageHeight: true,
+        pageHeight: 200,
+        pageWidth: 1600,
+        pageMarginTop: 8,
+        pageMarginBottom: 8,
+        pageMarginLeft: 8,
+        pageMarginRight: 20,
+        spacingStaff: 0
+      });
+      tk.loadData(abc);
+      var svgStr = tk.renderToSVG(1);
+      container.innerHTML = svgStr;
+
+      var svg = container.querySelector('svg');
+      if (!svg) return;
+      var w = parseFloat(svg.getAttribute('width')) || 400;
+      var h = parseFloat(svg.getAttribute('height')) || 120;
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+
+      var svgRect = svg.getBoundingClientRect();
+      noteEls = Array.prototype.slice.call(svg.querySelectorAll('g.note'));
+
+      noteEls.forEach(function(noteEl, i){
+        if (!melody[i]) return;
+        var headEl = noteEl.querySelector('.notehead') || noteEl;
+        var r = headEl.getBoundingClientRect();
+        var leftPct = ((r.left + r.width / 2 - svgRect.left) / svgRect.width) * 100;
+        var topPct = ((r.top + r.height / 2 - svgRect.top) / svgRect.height) * 100;
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'staff-note';
+        btn.style.left = leftPct + '%';
+        btn.style.top = topPct + '%';
+        btn.setAttribute('aria-label', 'Play ' + melody[i].label);
+        btn.addEventListener('click', function(){
+          playNote(melody[i]);
+          btn.classList.remove('is-playing');
+          void btn.offsetWidth;
+          btn.classList.add('is-playing');
+          flashNote(i);
+        });
+        container.appendChild(btn);
+      });
+    } catch (e) { /* leave staff empty on failure */ }
+  }
+
+  if (playBtn) {
+    playBtn.addEventListener('click', function(){
+      if (playBtn.classList.contains('is-playing')) stopSequence();
+      else playSequence();
+    });
+  }
+
+  loadScript(VEROVIO_SRC).then(waitForVerovio).then(function(){
+    tk = new window.verovio.toolkit();
+    renderStaff();
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function(){
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(renderStaff, 200);
+    });
+  }).catch(function(){
+    container.setAttribute('aria-hidden', 'true');
+    if (playBtn) playBtn.disabled = true;
+  });
+})();
+
+(function(){
   var navToggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navLinks');
 
@@ -128,6 +382,24 @@
     return Math.atan2(parts[1], parts[0]) * (180 / Math.PI);
   }
 
+  function landAtBottom(){
+    var slot = document.querySelector('.hero-photo-slot');
+    var target = document.getElementById('footerFallen');
+
+    photo.classList.remove('is-loose');
+    photo.style.position = '';
+    photo.style.left = '';
+    photo.style.top = '';
+    photo.style.margin = '';
+    photo.style.zIndex = '';
+    photo.style.transform = '';
+    photo.style.visibility = 'visible';
+
+    if (target) target.appendChild(photo);
+    photo.classList.add('hero-photo--landed');
+    if (slot) slot.classList.add('is-empty');
+  }
+
   function drop(){
     if (isLoose) return;
     isLoose = true;
@@ -143,9 +415,7 @@
     photo.style.zIndex = '50';
 
     if (reduced) {
-      photo.style.top = offScreenY + 'px';
-      photo.style.transform = 'rotate(24deg)';
-      photo.style.visibility = 'hidden';
+      landAtBottom();
       return;
     }
 
@@ -171,7 +441,7 @@
       if (y < offScreenY) {
         requestAnimationFrame(frame);
       } else {
-        photo.style.visibility = 'hidden';
+        landAtBottom();
       }
     }
     requestAnimationFrame(frame);
@@ -356,7 +626,7 @@ if (shaderMountEl && !prefersReducedMotion) {
         backgroundAlpha: 0.0,
         color1: 0x0b4f72,
         color2: 0x0e8c74,
-        quantity: 2,
+        quantity: 4,
         birdSize: 0.9,
         wingSpan: 22,
         speedLimit: 3.2,

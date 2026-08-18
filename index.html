@@ -6,6 +6,7 @@
 <title>Jason Zhang — Composer &amp; Programmer</title>
 <meta name="description" content="Jason Zhang is a composer and software engineer working across concert music, interactive audio, and machine learning.">
 
+<link rel="icon" type="image/x-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -57,10 +58,13 @@
         <h1>Jason<br><em>Zhang</em></h1>
         <p class="hero-sub">Writing concert music and interactive systems that listen to each other &mdash; scores, signal processing, and the occasional line of Unreal Engine blueprint.</p>
         <p class="hero-meta">Music Technology Student at MIT &mdash; Cambridge, MA</p>
-        <div class="staff" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="hero-staff-wrap">
+          <div class="hero-staff" id="heroStaff" role="group" aria-label="Notation of the opening phrase of Chopin's Nocturne in E-flat major, Op. 9 No. 2. Click a note to hear its pitch."></div>
+          <button type="button" class="staff-play" id="staffPlay" aria-label="Play the full phrase">&#9656; Play phrase</button>
+        </div>
       </div>
       <div class="hero-photo-slot">
-        <div class="hero-photo" id="heroPhoto" tabindex="0" role="button" aria-label="Portrait of Jason Zhang. Hover to tilt it, double-click to knock it off the wall.">
+        <div class="hero-photo" id="heroPhoto" tabindex="0" role="button" aria-label="Portrait of Jason Zhang. Hover to tilt it, double-click to knock it off the wall &mdash; it will turn up again at the bottom of the page.">
           <span class="hero-photo-initials" aria-hidden="true">JZ</span>
           <img src="images/Zhang-Profile.JPG" alt="Jason Zhang">
         </div>
@@ -164,6 +168,8 @@
 </section>
 
 <section id="projects">
+  <img class="jellyfish jellyfish--1" src="images/jellyfish1.png" alt="" aria-hidden="true" width="130" height="228">
+  <img class="jellyfish jellyfish--2" src="images/jellyfish2.png" alt="" aria-hidden="true" width="110" height="165">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Computer science</p>
@@ -304,6 +310,7 @@
 
 <footer>
   Jason Zhang &mdash; last updated May 2026
+  <div class="footer-fallen" id="footerFallen"></div>
 </footer>
 </div><!-- /#page -->
 
